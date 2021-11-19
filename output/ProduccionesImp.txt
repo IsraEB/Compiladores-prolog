@@ -1,0 +1,8 @@
+PRODUCCIONES
+
+   0)        SP --> S                                       
+   1)         S --> x B z                                   
+   2)         S --> A                                       
+   3)         B --> y A                                     
+   4)         B --> lambda                                  
+   5)         A --> z B z                                   

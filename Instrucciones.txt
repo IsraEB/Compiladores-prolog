@@ -1,0 +1,24 @@
+¿Para qué es esto?
+
+Las aplicaciones requieren de una clave de ejecución. Aquí debes introducir la llave generada por la aplicación, y esta página te generará la clave de ejecución.
+
+Aplicaciones disponibles
+
+Las aplicaciones están desarrolladas en SWI-Prolog. 
+Para poderlas ejecutar se requieren varias DLL's y archivos EXE. 
+Estos archivos no serán instalados en Windows, simplemente deben ser copiados en una carpeta. 
+Posteriormente, sobre esa misma carpeta se copian las aplicaciones que decidas utilizar.
+
+AFN a AFD - Genera un autómata finito determinístico(AFD) a partir de un autómata finito no-determinístico(AFN) mediante el algoritmo de construcción de subconjuntos.
+
+Minimización de estados de un AFD - Utiliza el algoritmo de partición de conjuntos para minimizar el número de estados de un AFD.
+
+Analizador Lexicográfico - Genera un archivo de tokens dados los diagramas de transición. El archivo DiagTrans.pl contiene información y un ejemplo.
+
+Tabla LL(1) - Genera una tabla LL(1) con base en la gramática de contexto libre(GCL) proporcionada. El programa toma la GCL y encuentra los terminales, no-terminales, el conjunto FIRST, el conjunto FOLLOW y produce la tabla. El archivo Producciones.pl contiene instrucciones sobre como codificar una GCL.
+
+Tabla SLR(1) - Genera una tabla SLR(1) con base en la gramática de contexto libre(GCL) proporcionada. El programa toma la GCL y encuentra los terminales, no-terminales, el conjunto FIRST, el conjunto FOLLOW, construye la colección canónica de Items LR(0) y produce la tabla. El archivo Producciones.pl contiene instrucciones sobre como codificar una GCL.
+
+Parser LL(1) - Es un analizador sintáctico que toma como entrada una tabla LL(1), una GCL y un programa fuente y determina si su sintaxis es correcta con base en la GCL. Se pueden generar las estructuras para revisar semántica y generar código. El archivo RegSem.pl contiene información sobre la codificación de reglas para generar código.
+
+Parser SLR(1) - Es un analizador sintáctico que toma como entrada una tabla SLR(1), una GCL y un programa fuente y determina si su sintaxis es correcta con base en la GCL. Se pueden generar las estructuras para revisar semántica y generar código. El archivo RegSem.pl contiene información sobre la codificación de reglas para generar código.

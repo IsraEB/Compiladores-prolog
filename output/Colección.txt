@@ -1,0 +1,21 @@
+
+   0)        SP --> . S                                     goto(0,S)=1         
+              S --> . x B z                                 goto(0,x)=2         
+              S --> . A                                     goto(0,A)=3         
+              A --> . z B z                                 goto(0,z)=4         
+   1)        SP --> S .                                                         
+   2)         S --> x . B z                                 goto(2,B)=5         
+              B --> . y A                                   goto(2,y)=6         
+              B --> . lambda                                goto(2,lambda)=7    
+   3)         S --> A .                                                         
+   4)         A --> z . B z                                 goto(4,B)=8         
+              B --> . y A                                   goto(4,y)=6         
+              B --> . lambda                                goto(4,lambda)=7    
+   5)         S --> x B . z                                 goto(5,z)=9         
+   6)         B --> y . A                                   goto(6,A)=10        
+              A --> . z B z                                 goto(6,z)=4         
+   7)         B --> lambda .                                                    
+   8)         A --> z B . z                                 goto(8,z)=11        
+   9)         S --> x B z .                                                     
+  10)         B --> y A .                                                       
+  11)         A --> z B z .                                                     

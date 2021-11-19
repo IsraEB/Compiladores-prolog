@@ -1,0 +1,19 @@
+Terminales = { x z y }
+
+No-Terminales = { SP S B A }
+
+FIRST(x) = x
+FIRST(z) = z
+FIRST(y) = y
+
+FIRST(SP) = x z 
+FIRST(S) = x z 
+FIRST(B) = y 
+FIRST(A) = z 
+
+
+FOLLOW(SP) = fin 
+FOLLOW(S) = fin 
+FOLLOW(B) = z 
+FOLLOW(A) = fin z 
+
