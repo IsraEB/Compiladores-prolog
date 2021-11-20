@@ -1,21 +1,35 @@
 
-   0)        SP --> . S                                     goto(0,S)=1         
-              S --> . x B z                                 goto(0,x)=2         
-              S --> . A                                     goto(0,A)=3         
-              A --> . z B z                                 goto(0,z)=4         
-   1)        SP --> S .                                                         
-   2)         S --> x . B z                                 goto(2,B)=5         
-              B --> . y A                                   goto(2,y)=6         
-              B --> . lambda                                goto(2,lambda)=7    
-   3)         S --> A .                                                         
-   4)         A --> z . B z                                 goto(4,B)=8         
-              B --> . y A                                   goto(4,y)=6         
-              B --> . lambda                                goto(4,lambda)=7    
-   5)         S --> x B . z                                 goto(5,z)=9         
-   6)         B --> y . A                                   goto(6,A)=10        
-              A --> . z B z                                 goto(6,z)=4         
-   7)         B --> lambda .                                                    
-   8)         A --> z B . z                                 goto(8,z)=11        
-   9)         S --> x B z .                                                     
-  10)         B --> y A .                                                       
-  11)         A --> z B z .                                                     
+   0)        EP --> . E                                     goto(0,E)=1         
+              E --> . E + T                                 goto(0,E)=1         
+              E --> . T                                     goto(0,T)=2         
+              T --> . T * F                                 goto(0,T)=2         
+              T --> . F                                     goto(0,F)=3         
+              F --> . ( E )                                 goto(0,()=4         
+              F --> . id                                    goto(0,id)=5        
+   1)        EP --> E .                                                         
+              E --> E . + T                                 goto(1,+)=6         
+   2)         E --> T .                                                         
+              T --> T . * F                                 goto(2,*)=7         
+   3)         T --> F .                                                         
+   4)         F --> ( . E )                                 goto(4,E)=8         
+              E --> . E + T                                 goto(4,E)=8         
+              E --> . T                                     goto(4,T)=2         
+              T --> . T * F                                 goto(4,T)=2         
+              T --> . F                                     goto(4,F)=3         
+              F --> . ( E )                                 goto(4,()=4         
+              F --> . id                                    goto(4,id)=5        
+   5)         F --> id .                                                        
+   6)         E --> E + . T                                 goto(6,T)=9         
+              T --> . T * F                                 goto(6,T)=9         
+              T --> . F                                     goto(6,F)=3         
+              F --> . ( E )                                 goto(6,()=4         
+              F --> . id                                    goto(6,id)=5        
+   7)         T --> T * . F                                 goto(7,F)=10        
+              F --> . ( E )                                 goto(7,()=4         
+              F --> . id                                    goto(7,id)=5        
+   8)         F --> ( E . )                                 goto(8,))=11        
+              E --> E . + T                                 goto(8,+)=6         
+   9)         E --> E + T .                                                     
+              T --> T . * F                                 goto(9,*)=7         
+  10)         T --> T * F .                                                     
+  11)         F --> ( E ) .                                                     

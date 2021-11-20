@@ -1,19 +1,21 @@
-Terminales = { x z y }
+Terminales = { + * ( ) id }
 
-No-Terminales = { SP S B A }
+No-Terminales = { EP E T F }
 
-FIRST(x) = x
-FIRST(z) = z
-FIRST(y) = y
+FIRST(+) = +
+FIRST(*) = *
+FIRST(() = (
+FIRST()) = )
+FIRST(id) = id
 
-FIRST(SP) = x z 
-FIRST(S) = x z 
-FIRST(B) = y 
-FIRST(A) = z 
+FIRST(EP) = ( id 
+FIRST(E) = ( id 
+FIRST(T) = ( id 
+FIRST(F) = ( id 
 
 
-FOLLOW(SP) = fin 
-FOLLOW(S) = fin 
-FOLLOW(B) = z 
-FOLLOW(A) = fin z 
+FOLLOW(EP) = fin 
+FOLLOW(E) = + ) fin 
+FOLLOW(T) = * + ) fin 
+FOLLOW(F) = * + ) fin 
 

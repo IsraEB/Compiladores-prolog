@@ -1,2 +1,2 @@
-crea_tabla_slr1('./producciones/produccionesGP.pl').
+crea_tabla_slr1('./producciones/ejemplo_slr.pl').
 crea_archivos_de_salida('./output/Conjuntos.txt', './output/Colección.txt', './output/TablaImp.txt', './output/Tabla.pl', './output/ProduccionesImp.txt').

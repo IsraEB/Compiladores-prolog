@@ -1,8 +1,9 @@
 PRODUCCIONES
 
-   0)        SP --> S                                       
-   1)         S --> x B z                                   
-   2)         S --> A                                       
-   3)         B --> y A                                     
-   4)         B --> lambda                                  
-   5)         A --> z B z                                   
+   0)        EP --> E                                       
+   1)         E --> E + T                                   
+   2)         E --> T                                       
+   3)         T --> T * F                                   
+   4)         T --> F                                       
+   5)         F --> ( E )                                   
+   6)         F --> id                                      
